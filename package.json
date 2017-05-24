@@ -1,12 +1,13 @@
 {
-  "name": "azure-bootcamp-2017",
+  "name": "prdc-2017-cool-typescript",
   "version": "0.0.0-development",
-  "description": "Sources for my talk about Docker on Azure App Service at the Azure Bootcamp 2017 event in Winnipeg, Manitoba, Canada",
+  "description": "Sources for my talk about TypeScript at Prairie Dev Con 2017 in Winnipeg, Manitoba, Canada",
   "main": "index.ts",
   "repository": {},
   "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
+    "build": "tsc && webpack lib/WebApp/BootcampWebAppSuite.js public/lib/index.js",
     "drone": "ts-node src/Drone/BootcampDroneSuite.ts",
     "server": "ts-node src/Server/BootcampServerSuite.ts"
   },
