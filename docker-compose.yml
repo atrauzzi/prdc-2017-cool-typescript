@@ -8,6 +8,13 @@ services:
       - "8080:80"
     command: "server"
 
+  mongodb:
+    image: mongo
+    container_name: mongodb
+
+    ports:
+      - "27017:27017"
+
   drone:
     build: "./"
     environment:

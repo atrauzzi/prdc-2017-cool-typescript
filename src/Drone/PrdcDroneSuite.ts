@@ -1,19 +1,19 @@
 import { Suite, App, ConsoleServiceProvider } from "protoculture";
-import { BootcampServerServiceProvider } from "./BootcampServerServiceProvider";
+import { PrdcDroneServiceProvider } from "./PrdcDroneServiceProvider";
 
 
-export class BootcampServerSuite extends Suite {
+export class PrdcDroneSuite extends Suite {
     
-    name: string = "bootcamp-server";
+    name: string = "bootcamp-drone";
 
     protected get serviceProviders() {
         
         return [
             ConsoleServiceProvider,
-            BootcampServerServiceProvider,
+            PrdcDroneServiceProvider,
         ];
     }
 }
 
-const suite = new BootcampServerSuite();
+const suite = new PrdcDroneSuite();
 suite.run().catch((error) => console.error(error));

@@ -7,18 +7,20 @@
   "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc && webpack lib/WebApp/BootcampWebAppSuite.js public/lib/index.js",
-    "drone": "ts-node src/Drone/BootcampDroneSuite.ts",
-    "server": "ts-node src/Server/BootcampServerSuite.ts"
+    "build": "tsc && webpack lib/WebApp/PrdcWebAppSuite.js public/lib/index.js",
+    "drone": "ts-node src/Drone/PrdcDroneSuite.ts",
+    "server": "ts-node --no-cache src/Server/PrdcServerSuite.ts"
   },
   "dependencies": {
     "@types/chance": "^0.7.32",
     "@types/googlemaps": "^3.26.8",
     "@types/hapi": "^16.0.1",
     "@types/inert": "^4.2.0",
+    "@types/mongoose": "^4.7.13",
     "chance": "^1.0.6",
     "hapi": "^16.1.1",
     "inert": "^4.2.0",
+    "mongoose": "^4.10.2",
     "protoculture": "^2.0.2",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2"

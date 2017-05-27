@@ -1,8 +1,8 @@
 import { Suite, App, WebServiceProvider, ReduxServiceProvider } from "protoculture";
-import { BootcampWebAppServiceProvider } from "./BootcampWebAppServiceProvider";
+import { PrdcWebAppServiceProvider } from "./PrdcWebAppServiceProvider";
 
 
-export class BootcampWebAppSuite extends Suite {
+export class PrdcWebAppSuite extends Suite {
     
     name: string = "bootcamp-2017-webapp";
 
@@ -10,10 +10,10 @@ export class BootcampWebAppSuite extends Suite {
         
         return [
             WebServiceProvider,
-            BootcampWebAppServiceProvider,
+            PrdcWebAppServiceProvider,
         ];
     }
 }
 
-const suite = new BootcampWebAppSuite();
+const suite = new PrdcWebAppSuite();
 suite.run();

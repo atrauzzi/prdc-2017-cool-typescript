@@ -1,6 +1,6 @@
 
 
-export interface BootcampWebAppState {
+export interface PrdcWebAppState {
 
     configuration: {
         googleMapsApiKey: string,
