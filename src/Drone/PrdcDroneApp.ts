@@ -7,9 +7,9 @@ import * as Chance from "chance";
 
 export class PrdcDroneApp implements App {
 
-    readonly name: string = "update";
+    public readonly name: string = "update";
 
-    readonly working: boolean = true;
+    public readonly working: boolean = true;
 
     public suite: Suite;
 
@@ -25,23 +25,20 @@ export class PrdcDroneApp implements App {
 
         this.info = {
             id: Chance().guid(),
-            latitude: info["latitude"],
-            longitude: info["longitude"],
+            latitude: info.latitude,
+            longitude: info.longitude,
         };
 
         this.suite.logger.log(JSON.stringify(this.info), this, LogLevel.Info);
 
-        setInterval(
-            () => this.updateMaster(),
-            15000
-        );
+        await this.updateMaster();
     }
 
     protected async updateMaster() {
 
         this.suite.logger.log("Updating master", this, LogLevel.Info);
 
-        const masterHost = this.environment.MASTER_HOST || "http://server";
+        const masterHost = this.environment.MASTER_HOST || "http://localhost:2112";
 
         this.suite.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
 

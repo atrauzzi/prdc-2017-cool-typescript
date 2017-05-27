@@ -8,8 +8,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsc && webpack lib/WebApp/PrdcWebAppSuite.js public/lib/index.js",
-    "drone": "ts-node src/Drone/PrdcDroneSuite.ts",
-    "server": "ts-node --no-cache src/Server/PrdcServerSuite.ts"
+    "drone": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Drone/PrdcDroneSuite.ts",
+    "serve": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Server/PrdcServerSuite.ts"
   },
   "dependencies": {
     "@types/chance": "^0.7.32",
@@ -21,6 +21,7 @@
     "hapi": "^16.1.1",
     "inert": "^4.2.0",
     "mongoose": "^4.10.2",
+    "nodemon": "^1.11.0",
     "protoculture": "^2.0.2",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2"
