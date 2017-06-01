@@ -1,8 +1,8 @@
-import { Suite, App, ConsoleServiceProvider } from "protoculture";
+import { Bundle, App, ConsoleServiceProvider } from "protoculture";
 import { PrdcServerServiceProvider } from "./PrdcServerServiceProvider";
 
 
-export class PrdcServerSuite extends Suite {
+export class PrdcServerBundle extends Bundle {
 
     public name = "bootcamp-server";
 
@@ -15,5 +15,6 @@ export class PrdcServerSuite extends Suite {
     }
 }
 
-const suite = new PrdcServerSuite();
-suite.run().catch((error) => console.error(error));
+const bundle = new PrdcServerBundle();
+// tslint:disable-next-line:no-console
+bundle.run().catch((error) => console.error(error));

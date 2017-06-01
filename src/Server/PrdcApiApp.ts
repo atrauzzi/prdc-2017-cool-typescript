@@ -1,4 +1,4 @@
-import { App, Environment, Suite, LogLevel } from "protoculture";
+import { App, Environment, Bundle, LogLevel } from "protoculture";
 import { ServerEnvironment } from "./ServerEnvironment";
 import * as Hapi from "hapi";
 import * as Inert from "inert";
@@ -13,7 +13,7 @@ export class PrdcApiApp implements App {
 
     public readonly working: boolean = true;
 
-    public suite: Suite;
+    public bundle: Bundle;
 
     protected mongoose: mongoose.Connection;
 
@@ -35,7 +35,7 @@ export class PrdcApiApp implements App {
 
         await server.register(Inert);
         server.connection({
-            port: this.environment.PORT || 2112,
+            port: this.environment.port || 2112,
             host: "0.0.0.0"
         });
 
@@ -80,13 +80,13 @@ export class PrdcApiApp implements App {
 
     protected addDrone(request: Hapi.Request, reply: Hapi.Base_Reply) {
 
-        this.suite.logger.log("Setting drone metadata", this, LogLevel.Info);
+        this.bundle.logger.log("Setting drone metadata", this, LogLevel.Info);
 
         const drone = new DroneModel(request.payload);
 
         if (drone) {
 
-            this.suite.logger.log(drone.toString(), this, LogLevel.Info);
+            this.bundle.logger.log(drone.toString(), this, LogLevel.Info);
             this.drones[drone.get("id")] = drone;
 
             drone.save();
@@ -97,7 +97,7 @@ export class PrdcApiApp implements App {
 
     protected connected(request: Hapi.Request, reply: Hapi.Base_Reply) {
 
-        this.suite.logger.log("Checked by a client", this, LogLevel.Info);
+        this.bundle.logger.log("Checked by a client", this, LogLevel.Info);
         reply(this.drones);
     }
 }

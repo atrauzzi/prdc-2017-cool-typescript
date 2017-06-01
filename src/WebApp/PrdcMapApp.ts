@@ -1,8 +1,7 @@
-import { App, Suite, LogLevel, Environment, lazyLoad, domReady, requestJson } from "protoculture";
+import { App, Bundle, LogLevel, Environment, lazyLoad, domReady, requestJson } from "protoculture";
 import { PrdcWebAppState } from "./PrdcWebAppState";
 import * as _ from "lodash";
 import { Drone } from "../Drone";
-
 
 
 export class PrdcMapApp implements App {
@@ -11,7 +10,7 @@ export class PrdcMapApp implements App {
 
     public working = true;
 
-    public suite: Suite;
+    public bundle: Bundle;
 
     protected map: google.maps.Map;
 
@@ -44,11 +43,11 @@ export class PrdcMapApp implements App {
 
     protected async loadDrones() {
 
-        this.suite.logger.log("Loading current drones", this, LogLevel.Info);
+        this.bundle.logger.log("Loading current drones", this, LogLevel.Info);
 
         const drones = await requestJson<{[key: string]: Drone}>("/connected");
 
-        this.suite.logger.log(JSON.stringify(drones), this, LogLevel.Info);
+        this.bundle.logger.log(JSON.stringify(drones), this, LogLevel.Info);
 
         _.forEach(this.markers, (marker) => marker.setMap(null));
 

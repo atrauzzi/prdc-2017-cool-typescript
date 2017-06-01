@@ -7,7 +7,7 @@ export class PrdcWebAppServiceProvider extends ServiceProvider {
 
     public async boot() {
 
-        this.suite.container.rebind(symbols.Environment)
+        this.bundle.container.rebind(symbols.Environment)
             .toConstantValue({});
 
         this.bindApp(PrdcMapApp);

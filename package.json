@@ -7,9 +7,9 @@
   "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc && webpack lib/WebApp/PrdcWebAppSuite.js public/lib/index.js",
-    "drone": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Drone/PrdcDroneSuite.ts",
-    "serve": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Server/PrdcServerSuite.ts"
+    "build": "tsc && webpack lib/WebApp/PrdcWebAppBundle.js public/lib/index.js",
+    "drone": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Drone/PrdcDroneBundle.ts",
+    "serve": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node --no-cache src/Server/PrdcServerBundle.ts"
   },
   "dependencies": {
     "@types/chance": "^0.7.32",

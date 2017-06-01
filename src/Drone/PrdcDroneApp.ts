@@ -1,4 +1,4 @@
-import { App, Environment, Suite, LogLevel, requestJson, createRequest } from "protoculture";
+import { App, Environment, Bundle, LogLevel, requestJson, createRequest } from "protoculture";
 import { DroneEnvironment } from "./DroneEnvironment";
 import { Drone } from "../Drone";
 import { ContentType, Method } from "protoculture/lib/CreateRequest";
@@ -11,7 +11,7 @@ export class PrdcDroneApp implements App {
 
     public readonly working: boolean = true;
 
-    public suite: Suite;
+    public bundle: Bundle;
 
     protected info: Drone;
 
@@ -29,18 +29,18 @@ export class PrdcDroneApp implements App {
             longitude: info.longitude,
         };
 
-        this.suite.logger.log(JSON.stringify(this.info), this, LogLevel.Info);
+        this.bundle.logger.log(JSON.stringify(this.info), this, LogLevel.Info);
 
         await this.updateMaster();
     }
 
     protected async updateMaster() {
 
-        this.suite.logger.log("Updating master", this, LogLevel.Info);
+        this.bundle.logger.log("Updating master", this, LogLevel.Info);
 
         const masterHost = this.environment.MASTER_HOST || "http://localhost:2112";
 
-        this.suite.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
+        this.bundle.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
 
         await createRequest(`${masterHost}/drone`, {
             contentType: ContentType.Json,
