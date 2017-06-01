@@ -47,7 +47,7 @@ export class PrdcApiApp implements App {
             },
             handler: {
                 directory: {
-                    path: "./public/",
+                    path: `${__dirname}/public/`,
                     redirectToSlash: true,
                     index: "index.html"
                 }
