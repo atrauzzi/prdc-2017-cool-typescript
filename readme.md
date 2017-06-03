@@ -4,7 +4,7 @@
 
 Presented by [Alexander Trauzzi](http://twitter.com/Omega_)
 
-This presentation serves as a simple example of some more advanced TypeScript project structure concepts.
+This presentation serves as a simple example of some more advanced TypeScript project concepts.
 
 ### Technologies
 
@@ -12,6 +12,7 @@ This presentation serves as a simple example of some more advanced TypeScript pr
  - Docker
  - Nodejs
  - TypeScript
+ - [Protoculture](https://github.com/atrauzzi/protoculture)
 
 ### Meta
 

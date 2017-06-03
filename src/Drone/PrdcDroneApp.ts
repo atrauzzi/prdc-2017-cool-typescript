@@ -38,7 +38,7 @@ export class PrdcDroneApp implements App {
 
         this.bundle.logger.log("Updating master", this, LogLevel.Info);
 
-        const masterHost = this.environment.MASTER_HOST || "http://localhost:2112";
+        const masterHost = this.environment.masterHost || "http://localhost:2112";
 
         this.bundle.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
 

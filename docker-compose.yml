@@ -6,9 +6,10 @@ services:
     build: "./"
     environment:
       PORT: 80
+      MONGODB: mongodb://mongodb/prdc-2017
     ports: 
       - "8080:80"
-    command: "server"
+    command: "serve"
 
   mongodb:
     image: mongo
