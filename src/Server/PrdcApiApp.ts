@@ -29,7 +29,7 @@ export class PrdcApiApp implements App {
     public async run() {
 
         (mongoose as any).Promise = Promise;
-        this.mongoose = await mongoose.connect("mongodb://localhost/prdc-2017");
+        this.mongoose = await mongoose.connect(this.environment.mongodb || "mongodb://localhost/prdc-2017");
 
         const server = new Hapi.Server();
 

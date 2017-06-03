@@ -5,9 +5,9 @@ COPY . /app
 WORKDIR /app
 
 RUN ["yarn", "install"]
-RUN ["bash", "./bin/build_app.sh"]
+RUN ["yarn", "build"]
 
 EXPOSE 80
 
 ENTRYPOINT ["yarn"]
-CMD ["server"]
+CMD ["serve"]
