@@ -6,7 +6,6 @@ import { Drone, DroneModel } from "../Drone";
 import * as mongoose from "mongoose";
 
 
-// ToDo: Procotulture: Configurable project root path (http vs filesystem! relative?)
 export class PrdcApiApp implements App {
 
     public readonly name: string = "api";
