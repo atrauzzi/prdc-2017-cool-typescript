@@ -1,5 +1,5 @@
 import { Bundle, App, ConsoleServiceProvider } from "protoculture";
-import { PrdcServerServiceProvider } from "./PrdcServerServiceProvider";
+import { PrdcServerServiceProvider } from "../App/Server/ServiceProvider";
 
 
 export class PrdcServerBundle extends Bundle {
@@ -16,5 +16,4 @@ export class PrdcServerBundle extends Bundle {
 }
 
 const bundle = new PrdcServerBundle();
-// tslint:disable-next-line:no-console
-bundle.run().catch((error) => console.error(error));
+bundle.run().catch(console.error);

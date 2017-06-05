@@ -1,7 +1,7 @@
+import * as _ from "lodash";
 import { App, Bundle, LogLevel, Environment, lazyLoad, domReady, requestJson } from "protoculture";
 import { PrdcWebAppState } from "./PrdcWebAppState";
-import * as _ from "lodash";
-import { Drone } from "../Drone";
+import { Drone } from "../../Domain/Drone";
 
 
 export class PrdcMapApp implements App {

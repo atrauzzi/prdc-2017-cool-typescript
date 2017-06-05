@@ -1,5 +1,5 @@
 import { Bundle, App, ConsoleServiceProvider } from "protoculture";
-import { PrdcDroneServiceProvider } from "./PrdcDroneServiceProvider";
+import { PrdcDroneServiceProvider } from "../App/Drone/ServiceProvider";
 
 
 export class PrdcDroneBundle extends Bundle {
@@ -16,5 +16,4 @@ export class PrdcDroneBundle extends Bundle {
 }
 
 const bundle = new PrdcDroneBundle();
-// tslint:disable-next-line:no-console
-bundle.run().catch((error) => console.error(error));
+bundle.run().catch(console.error);

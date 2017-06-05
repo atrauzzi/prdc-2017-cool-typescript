@@ -1,5 +1,5 @@
 import { Bundle, App, WebServiceProvider, ReduxServiceProvider } from "protoculture";
-import { PrdcWebAppServiceProvider } from "./PrdcWebAppServiceProvider";
+import { PrdcWebAppServiceProvider } from "../App/Web/ServiceProvider";
 
 
 export class PrdcWebAppBundle extends Bundle {

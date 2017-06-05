@@ -1,6 +1,6 @@
 import { App, Environment, Bundle, LogLevel, requestJson, createRequest } from "protoculture";
 import { DroneEnvironment } from "./DroneEnvironment";
-import { Drone } from "../Drone";
+import { Drone } from "../../Domain/Drone";
 import { ContentType, Method } from "protoculture/lib/CreateRequest";
 import * as Chance from "chance";
 

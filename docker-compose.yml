@@ -10,6 +10,8 @@ services:
     ports: 
       - "8080:80"
     command: "serve"
+    volumes:
+      - "./:/app"
 
   mongodb:
     image: mongo
@@ -23,3 +25,8 @@ services:
     environment:
       MASTER_HOST: http://server
     command: "drone"
+    depends_on:
+      - server
+    volumes:
+      - "./:/app"
+    
