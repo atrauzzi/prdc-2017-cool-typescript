@@ -108,7 +108,7 @@ export class PrdcApiApp implements App {
         server.start();
     }
 
-    protected addDrone(request: Hapi.Request, reply: Hapi.Base_Reply) {
+    protected async addDrone(request: Hapi.Request, reply: Hapi.Base_Reply) {
 
         this.bundle.logger.log("Setting drone metadata", this, LogLevel.Info);
 
@@ -119,7 +119,7 @@ export class PrdcApiApp implements App {
             this.bundle.logger.log(drone.toString(), this, LogLevel.Info);
             this.drones[drone.get("id")] = drone;
 
-            drone.save();
+            await drone.save();
         }
 
         reply(null);

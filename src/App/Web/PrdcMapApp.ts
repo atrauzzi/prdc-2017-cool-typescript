@@ -47,7 +47,8 @@ export class PrdcMapApp implements App {
 
         const drones = await requestJson<{[key: string]: Drone}>("/connected");
 
-        this.bundle.logger.log(JSON.stringify(drones), this, LogLevel.Info);
+        console.log(drones);
+        // this.bundle.logger.log(JSON.stringify(drones), this, LogLevel.Info);
 
         _.forEach(this.markers, (marker) => marker.setMap(null));
 

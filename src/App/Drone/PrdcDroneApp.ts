@@ -7,6 +7,7 @@ import * as Chance from "chance";
 
 export class PrdcDroneApp implements App {
 
+
     public readonly name: string = "update";
 
     public readonly working: boolean = true;
@@ -24,7 +25,7 @@ export class PrdcDroneApp implements App {
         const info: any = await requestJson(`http://freegeoip.net/json`);
 
         this.info = {
-            id: Chance().guid(),
+            id: (new Chance()).guid(),
             latitude: info.latitude,
             longitude: info.longitude,
         };
